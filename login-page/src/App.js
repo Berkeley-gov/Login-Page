@@ -12,10 +12,10 @@ function App() {
         {/* Everything located within the Router tags is now accessible to the browser/client. This allows for component navigational functionality  */}
         <div className='App'>
             <NavigationalBar />
+            {/* Route allows for the creation of URL paths that display a component/web page when their respective endpoints are hit. */}
             <Route path='/login' component={LoginPage} />
-            <Route path='/home' component={HomePage} />
+            <Route path='/' component={HomePage} />
             <Route path='/about' component={AboutPage} />
-
             <Footer />
         </div>
       </Router>

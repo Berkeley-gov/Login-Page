@@ -22,7 +22,7 @@ export default class NavigationalBar extends React.Component {
 
                           { /* Router path for home component set to URL path: /home */}
                           <li className="nav-item active">
-                              <a className="nav-link" href="/home">Home <span className="sr-only">(current)</span></a>
+                              <a className="nav-link" href="/">Home <span className="sr-only">(current)</span></a>
                           </li>
 
                           { /* Router path for about component set to URL path: /about */}
