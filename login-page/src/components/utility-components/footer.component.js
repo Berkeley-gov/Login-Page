@@ -2,34 +2,10 @@ import React, { Component } from 'react';
 
 // NavigationalBar is utility component that allows the user to navigate through the application main components/pages.
 export default class Footer extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         return(
             <footer className="bg-dark text-center text-white">
                 <div className="container p-4">
-                    <section className="mb-4">
-                        <a className="btn btn-outline-light btn-floating m-1" href="#" role="button"
-                        ><i className="fab fa-facebook-f"/></a>
-
-                        <a className="btn btn-outline-light btn-floating m-1" href="#" role="button"
-                        ><i className="fab fa-twitter"/></a>
-
-                        <a className="btn btn-outline-light btn-floating m-1" href="#" role="button"
-                        ><i className="fab fa-google"/></a>
-
-                        <a className="btn btn-outline-light btn-floating m-1" href="#" role="button"
-                        ><i className="fab fa-instagram"/></a>
-
-                        <a className="btn btn-outline-light btn-floating m-1" href="#" role="button"
-                        ><i className="fab fa-linkedin-in"/></a>
-
-                        <a className="btn btn-outline-light btn-floating m-1" href="#" role="button"
-                        ><i className="fab fa-github"/></a>
-                    </section>
-
                     <section className="">
                         <form action="">
                             <div className="row d-flex justify-content-center">
@@ -146,7 +122,8 @@ export default class Footer extends React.Component {
                     </section>
                 </div>
 
-                <div className="text-center p-3">
+                <hr />
+                <div className="text-center p-3 bg-dark">
                     © 2020 Copyright:
                     <a className="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
                 </div>

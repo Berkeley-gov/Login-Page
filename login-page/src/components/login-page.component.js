@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './styles-components/login-form.scss';
 
 export default class LoginPage extends React.Component {
     //TODO: Possibly pass an array of user account to the props of the LoginPage component.
@@ -10,64 +11,78 @@ export default class LoginPage extends React.Component {
         this.state = {
             username: '',
             password: '',
-            arrayOfUsers: []
-        }
+            arrayOfUsers: [],
+        };
 
         // Two-way data binding the this keyword to the appropriate functions and event fields.
         this.handleUsernameEvent = this.handleUsernameEvent.bind(this);
         this.handlePasswordEvent = this.handlePasswordEvent.bind(this);
-        this.handleFormSubmission = this.handleFormSubmission.bind(this)
+        this.handleFormSubmission = this.handleFormSubmission.bind(this);
     }
 
     // handleUsernameEvent component method handles the state of username field from the login form.
-    handleUsernameEvent = (inputFieldEvent) => {
-        this.setState({ username: inputFieldEvent.target.value });
+    handleUsernameEvent = (e) => {
+        this.setState({ username: e.target.value });
     }
 
     // handlePasswordEvent component method handles the state of password field from the login form.
-    handlePasswordEvent = (inputFieldEvent) => {
-        this.setState({ password: inputFieldEvent.target.event });
+    handlePasswordEvent = (e) => {
+        this.setState({ password: e.target.value });
     }
 
-    handleFormSubmission = (event) => {
+    handleFormSubmission = (e) => {
         // Prevents default form submission functionality when button is onClick event is activated.
-        event.preventDefault();
+        e.preventDefault();
+
+        // User input credentials stored into an object literal name.
+        const loginAttempt = {
+            username: this.state.username,
+            password: this.state.password,
+        };
+
+        console.log(`handle form event method is working. \nCurrent component state is: \nUsername: ${loginAttempt.username} \nPassword: ${loginAttempt.password}`);
     }
 
     // renders UI code to the client when LoginPage is path is called by the client.
     render() {
         return(
-            <section className='container-fluid'>
+            <section className='container-fluid row'>
                 { /* Login form starts here and gathers user input to authenticate their credentials. */ }
+                <form className='login-form bg-white p-5 shadow-lg col-md-6' onSubmit={this.handleFormSubmission}>
+                    <h2 className='display-4 text-center bg-light mb-5 p-2'>Login</h2>
 
-                <form>
+                    {/* Username form label starts here */}
                     <div className="form-group">
-                        <label htmlFor="exampleInputEmail1">Email address</label>
-                        <input type="email"
-                               className="form-control"
-                               id="exampleInputEmail1"
-                               aria-describedby="emailHelp"
-                               placeholder="Enter email" />
+                        <h3 className="pb-3 display-5">Username</h3>
+                        <input type="text"
+                               value={this.state.username}
+                               className="form-control shadow-sm p-4"
+                               onChange={this.handleUsernameEvent}
+                               required />
 
-                            <small id="emailHelp" className="form-text text-muted">We'll never share your email with
+                            <small id="emailHelp" className="form-text text-muted pb-2">We'll never share your email with
                                 anyone else.</small>
                     </div>
 
+                    {/* Password form label starts here */}
                     <div className="form-group">
-                        <label htmlFor="exampleInputPassword1">Password</label>
+                        <h3 className="pb-3 display-5">Password</h3>
                         <input type="password"
-                               className="form-control"
-                               id="exampleInputPassword1"
-                               placeholder="Password" />
+                               value={this.state.password}
+                               className="form-control shadow-sm p-4"
+                               onChange={this.handlePasswordEvent}
+                               required />
                     </div>
 
+                    {/* Remember me button starts here */}
                     <div className="form-group form-check">
                         <input type="checkbox"
-                               className="form-check-input"
-                               id="exampleCheck1" />
-                            <label className="form-check-label" htmlFor="exampleCheck1">Check me out</label>
+                               className="form-check-input shadow-sm" />
+                               <label id="remember-me" className="form-check-label text-muted">Remember me</label>
                     </div>
-                    <button type="submit" className="btn btn-primary">Submit</button>
+
+                    {/* Submit form button starts here */}
+                    <input type="submit" value='Submit' id='submit' className="btn btn-primary"  />
                 </form>
             </section>
         );

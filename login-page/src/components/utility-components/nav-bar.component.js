@@ -5,9 +5,9 @@ import './../styles-components/nav-bar.scss';
 export default class NavigationalBar extends React.Component {
     render() {
         return(
-          <header>
+          <header className='bg-dark'>
               { /* Start of the navigational bar used to surf through the application */}
-              <nav className="navbar navbar-expand-lg navbar-light bg-dark">
+              <nav className="navbar navbar-expand-lg bg-dark">
 
                   { /* Login demo logo will redirect the user to the login form page. */}
                   <a className="navbar-brand" href="/login">Login Demo</a>
@@ -32,7 +32,7 @@ export default class NavigationalBar extends React.Component {
 
                           { /* Router path for login component set to URL path: /login */}
                           <li className="nav-item dropdown">
-                              <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                              <a className="nav-link dropdown-toggle" href="/about" id="navbarDropdown" role="button"
                                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
                           </li>
 

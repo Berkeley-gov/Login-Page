@@ -10,7 +10,7 @@ function App() {
 
       <Router>
         {/* Everything located within the Router tags is now accessible to the browser/client. This allows for component navigational functionality  */}
-        <div className='App'>
+        <div className='App bg-light'>
             <NavigationalBar />
             {/* Route allows for the creation of URL paths that display a component/web page when their respective endpoints are hit. */}
             <Route path='/login' component={LoginPage} />

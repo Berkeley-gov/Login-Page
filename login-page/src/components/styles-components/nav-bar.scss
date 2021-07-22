@@ -3,3 +3,7 @@ $fontColor: white;
 a {
   color: $fontColor;
 }
+
+a:hover {
+  font-weight: bold;
+}

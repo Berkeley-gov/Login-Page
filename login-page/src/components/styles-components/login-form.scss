@@ -1,0 +1,19 @@
+$formCentral: 100px auto;
+
+.login-form {
+  margin: $formCentral;
+  border-radius: 20px;
+}
+
+form .input-label {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+form #submit {
+  font-size: 1.5rem;
+}
+
+small {
+  font-size: 16px;
+}
