@@ -13,9 +13,9 @@ function App() {
         <div className='App bg-light'>
             <NavigationalBar />
             {/* Route allows for the creation of URL paths that display a component/web page when their respective endpoints are hit. */}
-            <Route path='/login' component={LoginPage} />
-            <Route path='/' component={HomePage} />
-            <Route path='/about' component={AboutPage} />
+            <Route path='Login-Page/login' component={LoginPage} />
+            <Route path='Login-Page/' component={HomePage} />
+            <Route path='Login-Page/about' component={AboutPage} />
             <Footer />
         </div>
       </Router>
