@@ -34,8 +34,8 @@ export default class App extends React.Component {
                 <BrowserRouter>
                     <Switch>
                         {/* NOTE: render prop is used to pass data in a Route element. */}
-                        <Route exact path={'/'} render={props => (<HomePage {... props} loggedInStatus={this.state.loggedInStatus} />)} />
-                        <Route exact path='/dashboard' component={AboutPage} />
+                        <Route exact path={'/'} render={props => (<HomePage {... props} handleLogin={this.handleLogin} loggedInStatus={this.state.loggedInStatus} />)} />
+                        <Route exact path={'/dashboard'} render={props => (<AboutPage {... props} handleLogin={this.handleLogin} loggedInStatus={this.state.loggedInStatus} />)} />
                     </Switch>
                 </BrowserRouter>
                 {/* Application footer component for nav links and contact information. */}
