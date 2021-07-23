@@ -11,6 +11,8 @@ export default class LoginPage extends React.Component {
         this.state = {
             username: '',
             password: '',
+            password_confirmation: '',
+            registrationErrors: '',
             arrayOfUsers: [],
         };
 
@@ -33,6 +35,8 @@ export default class LoginPage extends React.Component {
     handleFormSubmission = (e) => {
         // Prevents default form submission functionality when button is onClick event is activated.
         e.preventDefault();
+
+        console.log('Login form submitted.\n');
 
         // User input credentials stored into an object literal name.
         const loginAttempt = {

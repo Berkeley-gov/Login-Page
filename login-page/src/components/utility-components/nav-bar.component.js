@@ -10,7 +10,7 @@ export default class NavigationalBar extends React.Component {
               <nav className="navbar navbar-expand-lg bg-dark">
 
                   { /* Login demo logo will redirect the user to the login form page. */}
-                  <a className="navbar-brand" href="Login-Page/login">Login Demo</a>
+                  <a className="navbar-brand" href="/">Login Demo</a>
                   <button className="navbar-toggler" type="button" data-toggle="collapse"
                           data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                           aria-expanded="false" aria-label="Toggle navigation">
@@ -22,17 +22,17 @@ export default class NavigationalBar extends React.Component {
 
                           { /* Router path for home component set to URL path: /home */}
                           <li className="nav-item active">
-                              <a className="nav-link" href="Login-Page/">Home <span className="sr-only">(current)</span></a>
+                              <a className="nav-link" href="/">Home <span className="sr-only">(current)</span></a>
                           </li>
 
                           { /* Router path for about component set to URL path: /about */}
                           <li className="nav-item">
-                              <a className="nav-link" href="Login-Page/login">Login</a>
+                              <a className="nav-link" href="/login">Login</a>
                           </li>
 
                           { /* Router path for login component set to URL path: /login */}
                           <li className="nav-item dropdown">
-                              <a className="nav-link dropdown-toggle" href="Login-Page/about" id="navbarDropdown" role="button"
+                              <a className="nav-link dropdown-toggle" href="/dashboard" id="navbarDropdown" role="button"
                                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
                           </li>
 
