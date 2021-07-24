@@ -11,7 +11,7 @@ export default class App extends React.Component {
 
         this.state = {
             loggedInStatus: 'NOT_LOGGED_IN',
-            user: {}
+            user: []
         };
 
         this.handleLogin = this.handleLogin.bind(this);
@@ -35,7 +35,7 @@ export default class App extends React.Component {
                     <Switch>
                         {/* NOTE: render prop is used to pass data in a Route element. */}
                         <Route exact path={'/'} render={props => (<HomePage {... props} handleLogin={this.handleLogin} loggedInStatus={this.state.loggedInStatus} />)} />
-                        <Route exact path={'/dashboard'} render={props => (<AboutPage {... props} handleLogin={this.handleLogin} loggedInStatus={this.state.loggedInStatus} />)} />
+                        <Route exact path={'/dashboard'} render={props => (<AboutPage {... props} handleLogin={this.handleLogin} loggedInStatus={this.state.loggedInStatus} user={this.state.user}/>)} />
                     </Switch>
                 </BrowserRouter>
                 {/* Application footer component for nav links and contact information. */}

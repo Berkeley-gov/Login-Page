@@ -135,7 +135,7 @@ export default class LoginPage extends React.Component {
                         <label id="remember-me" className="form-check-label text-muted">Remember me</label>
                     </div>
 
-                    <div id={'warning-text'} />
+                    <div id={'warning-text'} className={'pb-3'}/>
 
                     {/* Submit form button starts here */}
                     <input type="submit" value='Submit' id='submit' className="btn btn-primary"  />

@@ -17,10 +17,17 @@ export default class HomePage extends React.Component {
 
     render() {
         return(
-            <main>
-                <h2>Welcome to the home page</h2>
-                <h2>Logged in status is: {this.props.loggedInStatus}</h2>
-                {/*TODO: Change component name from Login to Registration */}
+            <main className={'p-5'}>
+                <div className="alert alert-danger d-flex align-items-center shadow col-md-3 mb-5" role="alert">
+                    <svg className="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:">
+                        <use xlinkHref="#exclamation-triangle-fill"/>
+                    </svg>
+                    <div>
+                        Login status: {this.props.loggedInStatus}
+                    </div>
+                </div>
+
+                {/*TODO: Add Registration */}
                 <Login handleSuccessfulAuth={this.handleSuccessfulAuth} />
             </main>
         );
