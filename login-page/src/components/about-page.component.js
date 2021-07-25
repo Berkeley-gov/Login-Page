@@ -1,10 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 export default class AboutPage extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         return(
             <main className={'p-5 m-4'}>

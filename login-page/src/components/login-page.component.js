@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Axios from 'axios';
 import './styles-components/login-form.scss';
 

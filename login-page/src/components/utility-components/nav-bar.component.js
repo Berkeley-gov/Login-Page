@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './../styles-components/nav-bar.scss';
 
 // NavigationalBar is utility component that allows the user to navigate through the application main components/pages.

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 // NavigationalBar is utility component that allows the user to navigate through the application main components/pages.
 export default class Footer extends React.Component {
