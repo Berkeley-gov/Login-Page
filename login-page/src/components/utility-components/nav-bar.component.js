@@ -1,5 +1,6 @@
 import React from 'react';
 import './../styles-components/nav-bar.scss';
+import {Link} from 'react-router-dom';
 
 // NavigationalBar is utility component that allows the user to navigate through the application main components/pages.
 export default class NavigationalBar extends React.Component {
@@ -22,17 +23,17 @@ export default class NavigationalBar extends React.Component {
 
                           { /* Router path for home component set to URL path: /dashboards */}
                           <li className="nav-item active">
-                              <a className="nav-link" href={'/dashboard'}>Home <span className="sr-only">(current)</span></a>
+                              <Link to="/dashboard" className="nav-link">Home <span className="sr-only">(current)</span></Link>
                           </li>
 
                           { /* Router path for about component set to URL path: / */}
                           <li className="nav-item">
-                              <a className="nav-link" href={'/'}>Login</a>
+                              <Link to="/" className="nav-link">Login</Link>
                           </li>
 
                           { /* Router path for about component set to URL path: /registration */}
                           <li className="nav-item">
-                              <a className="nav-link" href={'/register'}>Register</a>
+                              <Link to="/register" className="nav-link">Login</Link>
                           </li>
 
                           <li className="nav-item">
