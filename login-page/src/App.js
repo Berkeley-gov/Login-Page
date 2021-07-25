@@ -30,9 +30,10 @@ export default class App extends React.Component {
         return(
             <div className='app bg-light'>
                 {/* Everything located within the Router tags is now accessible to the browser/client. This allows for component navigational functionality  */}
-                <NavigationalBar />
                 {/* Route allows for the creation of URL paths that display a component/web page when their respective endpoints are hit. */}
                 <BrowserRouter>
+                    <NavigationalBar />
+
                     <Switch>
                         {/* NOTE: render prop is used to pass data in a Route element. */}
                         <Route exact path={'/'} render={props => (<HomePage {... props} handleLogin={this.handleLogin} loggedInStatus={this.state.loggedInStatus} />)} />

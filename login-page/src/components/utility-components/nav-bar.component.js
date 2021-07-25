@@ -10,7 +10,7 @@ export default class NavigationalBar extends React.Component {
               <nav className="navbar navbar-expand-lg bg-dark">
 
                   { /* Login demo logo will redirect the user to the login form page. */}
-                  <a className="navbar-brand" href="/">Login Demo</a>
+                  <a className="navbar-brand" href={'/'}>Login Demo</a>
                   <button className="navbar-toggler" type="button" data-toggle="collapse"
                           data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                           aria-expanded="false" aria-label="Toggle navigation">
@@ -22,19 +22,18 @@ export default class NavigationalBar extends React.Component {
 
                           { /* Router path for home component set to URL path: /dashboards */}
                           <li className="nav-item active">
-                              <a className="nav-link" href="/dashboard">Home <span className="sr-only">(current)</span></a>
+                              <a className="nav-link" href={'/dashboard'}>Home <span className="sr-only">(current)</span></a>
                           </li>
 
                           { /* Router path for about component set to URL path: / */}
                           <li className="nav-item">
-                              <a className="nav-link" href="/">Login</a>
+                              <a className="nav-link" href={'/'}>Login</a>
                           </li>
 
                           { /* Router path for about component set to URL path: /registration */}
                           <li className="nav-item">
-                              <a className="nav-link" href="/register">Register</a>
+                              <a className="nav-link" href={'/register'}>Register</a>
                           </li>
-
 
                           <li className="nav-item">
                               <a className="nav-link" href="https://berkeley-gov.github.io/myportfolio.github.io/" tabIndex="1" aria-disabled="true">Portfolio</a>
