@@ -1,5 +1,6 @@
 import React from 'react';
 
+// Clock component displays current time based on the time settings of the user's machine.
 export default class Clock extends React.Component {
     constructor(props) {
         super(props)
