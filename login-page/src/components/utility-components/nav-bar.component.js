@@ -1,6 +1,7 @@
 import React from 'react';
 import './../styles-components/nav-bar.scss';
 import {Link} from 'react-router-dom';
+import Clock from './clock.component';
 
 // NavigationalBar is utility component that allows the user to navigate through the application main components/pages.
 export default class NavigationalBar extends React.Component {
@@ -40,6 +41,10 @@ export default class NavigationalBar extends React.Component {
                               <a className="nav-link" href="https://berkeley-gov.github.io/myportfolio.github.io/" tabIndex="1" aria-disabled="true">Portfolio</a>
                           </li>
                       </ul>
+
+                      <div className={'mr-5 pr-5 font-weight-bold'}>
+                          <Clock />
+                      </div>
 
                       { /* Search bar form starts here. For this project, has no functionality. */}
                       <form className="form-inline my-2 my-lg-0">
