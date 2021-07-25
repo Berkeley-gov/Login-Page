@@ -1,6 +1,7 @@
 import React from 'react';
 import Axios from 'axios';
 import './styles-components/login-form.scss';
+import {Link} from "react-router-dom";
 
 export default class LoginPage extends React.Component {
     //TODO: Possibly pass an array of user account to the props of the LoginPage component.
@@ -142,8 +143,10 @@ export default class LoginPage extends React.Component {
                                required />
                     </div>
 
+                    <Link to="/register" className="text-primary link pb-4">Register for an account.</Link>
+
                     {/* Remember me button starts here */}
-                    <div className="form-group form-check">
+                    <div className="form-group form-check pt-4">
                         <input type="checkbox"
                                className="form-check-input shadow-sm" />
                         <label id="remember-me" className="form-check-label text-muted">Remember me</label>

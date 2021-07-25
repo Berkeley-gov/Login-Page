@@ -33,7 +33,7 @@ export default class NavigationalBar extends React.Component {
 
                           { /* Router path for about component set to URL path: /registration */}
                           <li className="nav-item">
-                              <Link to="/register" className="nav-link">Login</Link>
+                              <Link to="/register" className="nav-link">Register</Link>
                           </li>
 
                           <li className="nav-item">
