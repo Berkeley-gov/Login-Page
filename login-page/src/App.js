@@ -4,14 +4,15 @@ import NavigationalBar from './components/utility-components/nav-bar.component';
 import HomePage from './components/home-page.component';
 import AboutPage from './components/about-page.component';
 import Footer from './components/utility-components/footer.component';
+import RegistrationPage from './components/registration-page.component';
 
 export default class App extends React.Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            loggedInStatus: 'NOT_LOGGED_IN',
-            user: []
+            loggedInStatus: 'NOT_SIGNED_IN',
+            user: {}
         };
 
         this.handleLogin = this.handleLogin.bind(this);
@@ -20,7 +21,7 @@ export default class App extends React.Component {
     // Updates the states of the app component. Key functionality needed for authentication of user credentials.
     handleLogin(data) {
         this.setState({
-            loggedInStatus: "LOGGED",
+            loggedInStatus: "SIGNED_IN",
             user: data
         });
     }
@@ -36,6 +37,7 @@ export default class App extends React.Component {
                         {/* NOTE: render prop is used to pass data in a Route element. */}
                         <Route exact path={'/'} render={props => (<HomePage {... props} handleLogin={this.handleLogin} loggedInStatus={this.state.loggedInStatus} />)} />
                         <Route exact path={'/dashboard'} render={props => (<AboutPage {... props} handleLogin={this.handleLogin} loggedInStatus={this.state.loggedInStatus} user={this.state.user}/>)} />
+                        <Route exact path={'/register'} render={props => (<RegistrationPage {... props} handleLogin={this.handleLogin} loggedInStatus={this.state.loggedInStatus} />)} />
                     </Switch>
                 </BrowserRouter>
                 {/* Application footer component for nav links and contact information. */}

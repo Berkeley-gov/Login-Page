@@ -17,8 +17,8 @@ export default class HomePage extends React.Component {
 
     render() {
         return(
-            <main className={'p-5'}>
-                <div className="alert alert-danger d-flex align-items-center shadow col-md-3 mb-5" role="alert">
+            <main className={'p-5 m-5'}>
+                <div className="alert alert-danger d-flex align-items-center shadow-sm" role="alert">
                     <svg className="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:">
                         <use xlinkHref="#exclamation-triangle-fill"/>
                     </svg>

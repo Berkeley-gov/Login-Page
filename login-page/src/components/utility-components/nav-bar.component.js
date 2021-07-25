@@ -20,24 +20,24 @@ export default class NavigationalBar extends React.Component {
                   <div className="collapse navbar-collapse" id="navbarSupportedContent">
                       <ul className="navbar-nav mr-auto">
 
-                          { /* Router path for home component set to URL path: /home */}
+                          { /* Router path for home component set to URL path: /dashboards */}
                           <li className="nav-item active">
-                              <a className="nav-link" href="/">Home <span className="sr-only">(current)</span></a>
+                              <a className="nav-link" href="/dashboard">Home <span className="sr-only">(current)</span></a>
                           </li>
 
-                          { /* Router path for about component set to URL path: /about */}
+                          { /* Router path for about component set to URL path: / */}
                           <li className="nav-item">
-                              <a className="nav-link" href="/login">Login</a>
+                              <a className="nav-link" href="/">Login</a>
                           </li>
 
-                          { /* Router path for login component set to URL path: /login */}
-                          <li className="nav-item dropdown">
-                              <a className="nav-link dropdown-toggle" href="/dashboard" id="navbarDropdown" role="button"
-                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
+                          { /* Router path for about component set to URL path: /registration */}
+                          <li className="nav-item">
+                              <a className="nav-link" href="/register">Register</a>
                           </li>
+
 
                           <li className="nav-item">
-                              <a className="nav-link disabled" href="#" tabIndex="-1" aria-disabled="true">Disabled</a>
+                              <a className="nav-link" href="https://berkeley-gov.github.io/myportfolio.github.io/" tabIndex="1" aria-disabled="true">Portfolio</a>
                           </li>
                       </ul>
 

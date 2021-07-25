@@ -14,7 +14,7 @@ export default class LoginPage extends React.Component {
             password: '',
             password_confirmation: '',
             registrationErrors: '',
-            arrayOfUsers: [],
+            users: []
         };
 
         // Two-way data binding the this keyword to the appropriate functions and event fields.
@@ -44,7 +44,8 @@ export default class LoginPage extends React.Component {
             authentication = arrayElement.username === credentials.username && arrayElement.password === credentials.password;
 
             if(authentication) {
-                console.log('\n> User successfully authenticated and logged into their account.\nUSER LOGGED IN:' + arrayElement.first_name);
+                console.log('\n> User successfully authenticated and logged into their account.\nUSER LOGGED IN:' + arrayElement["first_name"]);
+
                 // Setting the user login cookies.
                 sessionStorage.setItem('username', arrayElement.username);
 
@@ -66,7 +67,7 @@ export default class LoginPage extends React.Component {
     }
 
     // Lifecycle method for Login component that makes an axios get request call to the BMI api.
-    componentWillMount()  {
+    componentDidMount()  {
         Axios.get('https://body-mass-index-cal.herokuapp.com/users/')
                 .then(response => {
                     this.setState({ users: response.data});
@@ -77,6 +78,19 @@ export default class LoginPage extends React.Component {
                     console.log(error);
                 });
     }
+
+    componentWillUpdate() {
+        Axios.get('https://body-mass-index-cal.herokuapp.com/users/')
+            .then(response => {
+                this.setState({ users: response.data});
+                console.log(this.state.users);
+            })
+            .catch(error => {
+                console.log('\n> Failed to retrieve all user from the database');
+                console.log(error);
+            });
+    }
+
 
     // Handles the functionality of the form submission event and authentication process.
     handleFormSubmission = (e) => {
@@ -102,12 +116,12 @@ export default class LoginPage extends React.Component {
         return(
             <section className='container-fluid row'>
                 { /* Login form starts here and gathers user input to authenticate their credentials. */ }
-                <form className='login-form bg-white p-5 shadow-lg col-md-6' onSubmit={this.handleFormSubmission}>
-                    <h2 className='display-4 text-center bg-light mb-5 p-2'>Login</h2>
+                <form className='login-form bg-white p-5 shadow-sm col-md-6' onSubmit={this.handleFormSubmission}>
+                    <h2 className='display-4 text-center text-white bg-dark bg-gradients mb-5 p-1 rounded-pill'>Login</h2>
 
                     {/* Username form label starts here */}
                     <div className="form-group">
-                        <h3 className="pb-3 display-5">Username</h3>
+                        <h3 className="pb-3 display-6">Username</h3>
                         <input type="text"
                                value={this.state.username}
                                className="form-control shadow-sm p-4"
@@ -120,7 +134,7 @@ export default class LoginPage extends React.Component {
 
                     {/* Password form label starts here */}
                     <div className="form-group">
-                        <h3 className="pb-3 display-5">Password</h3>
+                        <h3 className="pb-3 display-6">Password</h3>
                         <input type="password"
                                value={this.state.password}
                                className="form-control shadow-sm p-4"
@@ -138,7 +152,7 @@ export default class LoginPage extends React.Component {
                     <div id={'warning-text'} className={'pb-3'}/>
 
                     {/* Submit form button starts here */}
-                    <input type="submit" value='Submit' id='submit' className="btn btn-primary"  />
+                    <input type="submit" value='Submit' id='submit' className="btn btn-outline-dark" />
                 </form>
             </section>
         );
