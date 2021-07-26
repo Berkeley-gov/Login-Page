@@ -7,7 +7,8 @@ export default class Clock extends React.Component {
 
         // Component handles a state named date that controls the time functionality of for the Clock component.
         this.state = {
-            date: new Date()
+            date: new Date(),
+            seconds: 1000
         };
     }
 
@@ -16,10 +17,9 @@ export default class Clock extends React.Component {
     }
 
     componentDidMount() {
-        const second = 1000;
 
         this.intervalID = setInterval(() => {
-            this.setState({ date: new Date()}, this.second);
+            this.setState({date: new Date()}, this.seconds);
         });
     }
 
